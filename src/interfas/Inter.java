@@ -36,36 +36,73 @@ public class Inter extends javax.swing.JFrame {
         jTextPane1 = new javax.swing.JTextPane();
         jPanel2 = new javax.swing.JPanel();
         txtNumero = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
         Resultado = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         Boton_Agregar = new javax.swing.JButton();
         Boton_Mostrar = new javax.swing.JButton();
         Boton_Ordenar = new javax.swing.JButton();
-        jPanel6 = new javax.swing.JPanel();
 
         jScrollPane1.setViewportView(jTextPane1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new java.awt.GridLayout(0, 1));
 
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Agregar"));
+        jPanel2.setLayout(new java.awt.GridLayout());
 
+        txtNumero.setBackground(new java.awt.Color(87, 96, 111));
         txtNumero.setFont(new java.awt.Font("Tempus Sans ITC", 0, 24)); // NOI18N
+        txtNumero.setForeground(new java.awt.Color(255, 255, 255));
+        txtNumero.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                txtNumeroMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtNumeroMouseExited(evt);
+            }
+        });
         txtNumero.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtNumeroKeyTyped(evt);
             }
         });
-        jPanel2.add(txtNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 327, 100));
+        jPanel2.add(txtNumero);
 
+        getContentPane().add(jPanel2);
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Mostrar y Ordenar"));
+        jPanel1.setLayout(new java.awt.GridLayout());
+
+        Resultado.setBackground(new java.awt.Color(47, 53, 66));
         Resultado.setFont(new java.awt.Font("Segoe Script", 3, 36)); // NOI18N
-        jPanel2.add(Resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 327, 150));
+        Resultado.setForeground(new java.awt.Color(206, 214, 224));
+        Resultado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ResultadoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ResultadoMouseExited(evt);
+            }
+        });
+        jPanel1.add(Resultado);
 
-        getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
+        getContentPane().add(jPanel1);
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Opciones\n"));
         jPanel3.setToolTipText("");
 
+        Boton_Agregar.setBackground(new java.awt.Color(236, 240, 241));
+        Boton_Agregar.setForeground(new java.awt.Color(0, 0, 0));
         Boton_Agregar.setText("Agregar");
+        Boton_Agregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Boton_AgregarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Boton_AgregarMouseExited(evt);
+            }
+        });
         Boton_Agregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Boton_AgregarActionPerformed(evt);
@@ -73,7 +110,17 @@ public class Inter extends javax.swing.JFrame {
         });
         jPanel3.add(Boton_Agregar);
 
+        Boton_Mostrar.setBackground(new java.awt.Color(236, 240, 241));
+        Boton_Mostrar.setForeground(new java.awt.Color(0, 0, 0));
         Boton_Mostrar.setText("Mostrar");
+        Boton_Mostrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Boton_MostrarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Boton_MostrarMouseExited(evt);
+            }
+        });
         Boton_Mostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Boton_MostrarActionPerformed(evt);
@@ -81,7 +128,17 @@ public class Inter extends javax.swing.JFrame {
         });
         jPanel3.add(Boton_Mostrar);
 
+        Boton_Ordenar.setBackground(new java.awt.Color(236, 240, 241));
+        Boton_Ordenar.setForeground(new java.awt.Color(0, 0, 0));
         Boton_Ordenar.setText("Ordenar");
+        Boton_Ordenar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Boton_OrdenarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Boton_OrdenarMouseExited(evt);
+            }
+        });
         Boton_Ordenar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Boton_OrdenarActionPerformed(evt);
@@ -89,11 +146,7 @@ public class Inter extends javax.swing.JFrame {
         });
         jPanel3.add(Boton_Ordenar);
 
-        getContentPane().add(jPanel3, java.awt.BorderLayout.PAGE_END);
-
-        jPanel6.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jPanel6, java.awt.BorderLayout.CENTER);
+        getContentPane().add(jPanel3);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -180,6 +233,72 @@ public class Inter extends javax.swing.JFrame {
         
     }//GEN-LAST:event_Boton_OrdenarActionPerformed
 
+    private void Boton_AgregarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton_AgregarMouseEntered
+        // TODO add your handling code here:
+        Boton_Agregar.setBackground(new java.awt.Color(0, 0, 0));
+        Boton_Agregar.setForeground(new java.awt.Color(236, 240, 241));
+    }//GEN-LAST:event_Boton_AgregarMouseEntered
+
+    private void Boton_AgregarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton_AgregarMouseExited
+        // TODO add your handling code here:
+        Boton_Agregar.setBackground(new java.awt.Color(236, 240, 241));
+        Boton_Agregar.setForeground(new java.awt.Color(0, 0, 0));
+    }//GEN-LAST:event_Boton_AgregarMouseExited
+
+    private void Boton_MostrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton_MostrarMouseEntered
+        // TODO add your handling code here:
+        Boton_Mostrar.setBackground(new java.awt.Color(0, 0, 0));
+        Boton_Mostrar.setForeground(new java.awt.Color(236, 240, 241));
+    }//GEN-LAST:event_Boton_MostrarMouseEntered
+
+    private void Boton_MostrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton_MostrarMouseExited
+        // TODO add your handling code here:
+        Boton_Mostrar.setBackground(new java.awt.Color(236, 240, 241));
+        Boton_Mostrar.setForeground(new java.awt.Color(0, 0, 0));
+    }//GEN-LAST:event_Boton_MostrarMouseExited
+
+    private void Boton_OrdenarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton_OrdenarMouseEntered
+        // TODO add your handling code here:
+        Boton_Ordenar.setBackground(new java.awt.Color(0, 0, 0));
+        Boton_Ordenar.setForeground(new java.awt.Color(236, 240, 241));
+    }//GEN-LAST:event_Boton_OrdenarMouseEntered
+
+    private void Boton_OrdenarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton_OrdenarMouseExited
+        // TODO add your handling code here:
+        Boton_Ordenar.setBackground(new java.awt.Color(236, 240, 241));
+        Boton_Ordenar.setForeground(new java.awt.Color(0, 0, 0));
+    }//GEN-LAST:event_Boton_OrdenarMouseExited
+
+    private void txtNumeroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNumeroMouseEntered
+        // TODO add your handling code here:
+        txtNumero.setBackground(new java.awt.Color(255, 255, 255));
+        txtNumero.setFont(new java.awt.Font("Tempus Sans ITC", 0, 24)); // NOI18N
+        txtNumero.setForeground(new java.awt.Color(87, 96, 111));
+        
+    }//GEN-LAST:event_txtNumeroMouseEntered
+
+    private void txtNumeroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNumeroMouseExited
+        // TODO add your handling code here:
+        txtNumero.setBackground(new java.awt.Color(87, 96, 111));
+        txtNumero.setFont(new java.awt.Font("Tempus Sans ITC", 0, 24)); // NOI18N
+        txtNumero.setForeground(new java.awt.Color(255, 255, 255));
+    }//GEN-LAST:event_txtNumeroMouseExited
+
+    private void ResultadoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResultadoMouseEntered
+        // TODO add your handling code here:
+        Resultado.setBackground(new java.awt.Color(47, 53, 66));
+        Resultado.setFont(new java.awt.Font("Segoe Script", 3, 36)); // NOI18N
+        Resultado.setForeground(new java.awt.Color(206, 214, 224));
+        
+    }//GEN-LAST:event_ResultadoMouseEntered
+
+    private void ResultadoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResultadoMouseExited
+        // TODO add your handling code here:
+         Resultado.setBackground(new java.awt.Color(206, 214, 224));
+        Resultado.setFont(new java.awt.Font("Segoe Script", 3, 36)); // NOI18N
+        Resultado.setForeground(new java.awt.Color(47, 53, 66));
+    }//GEN-LAST:event_ResultadoMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -220,9 +339,9 @@ public class Inter extends javax.swing.JFrame {
     private javax.swing.JButton Boton_Mostrar;
     private javax.swing.JButton Boton_Ordenar;
     private javax.swing.JLabel Resultado;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextPane jTextPane1;
     private javax.swing.JTextField txtNumero;

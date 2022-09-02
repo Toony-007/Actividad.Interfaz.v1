@@ -124,6 +124,8 @@ public class Inter extends javax.swing.JFrame {
 
     private void txtNumeroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumeroKeyTyped
         // TODO add your handling code here:
+        //Forma 1 - Original.
+        /*
         int key = evt.getKeyChar();
         
         boolean numeros_entrada = key >=48 && key <=57 || key==45;
@@ -132,10 +134,18 @@ public class Inter extends javax.swing.JFrame {
         {
             evt.consume();
         }
+        */
+        //Forma 2 - Mas corta la del profe
+         if(!Character.isDigit(evt.getKeyChar()))
+        {
+            evt.consume();
+        }
     }//GEN-LAST:event_txtNumeroKeyTyped
 
     private void Boton_OrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton_OrdenarActionPerformed
         // TODO add your handling code here:
+        
+        // Forma 1.
         
         Resultado.setText("");
         for (int i = 0; i < indice;i++)
@@ -156,6 +166,7 @@ public class Inter extends javax.swing.JFrame {
         }
         
         
+        //Forma 3 - Fallido
         /*
         Arrays.sort(numeros);
         for(int i = 0; i < numeros.length; i++)

@@ -169,8 +169,9 @@ public class Inter extends javax.swing.JFrame {
 
     private void txtNumeroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumeroKeyTyped
         // TODO add your handling code here:
-        //Forma 1 - Original.
-        /*
+        
+        //Forma 1 - Investigado y Realizado - Funcional
+        
         int key = evt.getKeyChar();
         
         boolean numeros_entrada = key >=48 && key <=57 || key==45;
@@ -179,18 +180,21 @@ public class Inter extends javax.swing.JFrame {
         {
             evt.consume();
         }
-        */
-        //Forma 2 - Mas corta la del profe
+        
+        
+        //Forma 2 - Forma mas corta - Realizada por el docente
+        /*
          if(!Character.isDigit(evt.getKeyChar()))
         {
             evt.consume();
         }
+        */
     }//GEN-LAST:event_txtNumeroKeyTyped
 
     private void Boton_OrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton_OrdenarActionPerformed
         // TODO add your handling code here:
         
-        // Forma 1.
+        // Forma 1 - Investigado y Realizado - Funcional
         
         Resultado.setText("");
         for (int i = 0; i < indice;i++)
@@ -211,7 +215,7 @@ public class Inter extends javax.swing.JFrame {
         }
         
         
-        //Forma 3 - Fallido
+        //Forma 2 - Fallido
         /*
         Arrays.sort(numeros);
         for(int i = 0; i < numeros.length; i++)
